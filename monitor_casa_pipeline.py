@@ -58,14 +58,11 @@ def run_task(name, func):
 
 #tareas para exigir el uso del equipo 
 def task1_tclean():
-    """Imaging with tclean"""
     from casatools import image
-    
     img = str(WORK_DIR / "img1.image")
     ia = image()
     ia.fromshape(img, [IMAGE_SIZE, IMAGE_SIZE, 1, NUM_CHANNELS])
     ia.close()
-    print(f"[imagen {IMAGE_SIZE}x{IMAGE_SIZE}x{NUM_CHANNELS}]", end=" ")
 
 def task2_immath():
     """Math imgs"""
@@ -151,6 +148,11 @@ def main():
     if WORK_DIR.exists():
         shutil.rmtree(WORK_DIR)
     WORK_DIR.mkdir()
+
+    import shutil
+    if WORK_DIR.exists():
+        shutil.rmtree(WORK_DIR)
+    WORK_DIR.mkdir(parents=True)
 
     #### en caso de no tener el servicio, por que no    
     start_http_server(PROMETHEUS_PORT)
