@@ -1,5 +1,3 @@
-### Stage Project Showcase
-
 <h2> Stage project repository for ALMA-Pipeline and Jenkins monitoring</h2>
 
 This repository is intended to showcase the python script used for CASA-Pipeline in context of ALMA pipeline used for calibrate instruments used in astronomy obersvatories.
